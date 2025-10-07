@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:ml5js.github.io)"
+      "WebFetch(domain:ml5js.github.io)",
+      "Bash(curl -X POST http://localhost:5000/similarity -H \"Content-Type: application/json\" -d \"{\"\"text1\"\": \"\"love\"\", \"\"text2\"\": \"\"hate\"\"}\")",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

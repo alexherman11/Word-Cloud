@@ -10,11 +10,21 @@ const io = require('socket.io')(http, {
 });
 const path = require('path');
 const os = require('os');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // Store all words and connections server-side
 let words = new Map(); // Each word: { count, embedding, color }
 let connections = [];
 let totalSubmissions = 0;
+
+// Proxy spaCy service requests (so we only need one ngrok tunnel)
+app.use('/spacy', createProxyMiddleware({
+    target: 'http://localhost:5000',
+    changeOrigin: true,
+    pathRewrite: {
+        '^/spacy': '' // remove /spacy prefix when forwarding
+    }
+}));
 
 // Serve static files
 app.use(express.static('public'));
