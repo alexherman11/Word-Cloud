@@ -10,7 +10,7 @@ An interactive, collaborative word cloud visualization that uses AI-powered word
 
 This project creates a beautiful, interactive word cloud where words that are semantically similar (like "love" and "romance") are automatically connected with lines. Unlike traditional word clouds that just show frequency, this visualization shows the **relationships between concepts** using advanced natural language processing.
 
-![til](./demo_video.gif)
+![til](./live_demo.gif)
 
 ### Key Features
 
